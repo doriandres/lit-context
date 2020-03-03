@@ -1,9 +1,7 @@
 {
-  "name": "main-app",
-  "version": "0.0.0",
-  "description": "Webcomponent main-app following open-wc recommendations",
-  "author": "main-app",
-  "license": "MIT",
+  "name": "lit-context",
+  "version": "0.0.1",
+  "author": "doriandres",  
   "scripts": {
     "start": "es-dev-server --app-index index.html --node-resolve --open --watch"
   },
