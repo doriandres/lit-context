@@ -47,6 +47,7 @@ class SimpleMessage extends LitElement {
 }
 window.customElements.define('simple-message', SimpleMessage);
 
+// Provider component
 class MainApp extends LitElement {
   static get properties() {
     return {
@@ -76,7 +77,6 @@ class MainApp extends LitElement {
   }
 }
 window.customElements.define('main-app', MainApp);
-
 
 ```
 
