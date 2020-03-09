@@ -10,7 +10,7 @@ export class ContextProvider extends LitElement {
   }
 
   constructor() {
-    super();    
+    super();
     this.context = createContext(this.value);
   }
 
