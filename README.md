@@ -24,7 +24,7 @@ customElements.define('message-provider', MessageProvider);
 // Create custom consumer
 const consumeMessageContext = consumer => contextConsumer('message-provider', consumer);
 
-// Consumer component
+// Consumer component example
 class SimpleMessage extends LitElement {
   static get properties() {
     return {
@@ -45,9 +45,10 @@ class SimpleMessage extends LitElement {
     `;
   }
 }
-window.customElements.define('simple-message', SimpleMessage);
+customElements.define('simple-message', SimpleMessage);
 
-// Provider component
+
+// Usage example
 class MainApp extends LitElement {
   static get properties() {
     return {
@@ -76,7 +77,8 @@ class MainApp extends LitElement {
     `;
   }
 }
-window.customElements.define('main-app', MainApp);
+
+customElements.define('main-app', MainApp);
 
 ```
 
