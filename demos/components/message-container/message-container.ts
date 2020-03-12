@@ -1,12 +1,11 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, customElement } from 'lit-element';
 import  '../just-container/just-container';
 import  '../simple-message/simple-message';
 
+@customElement('message-container')
 export class MessageContainer extends LitElement {
-  constructor() {
-    super();    
-    this.updates = 0;
-  }
+  updates: number = 0;
+
   render() {
     this.updates ++;
     return html`
@@ -17,5 +16,3 @@ export class MessageContainer extends LitElement {
     `;
   }
 }
-
-window.customElements.define('message-container', MessageContainer);

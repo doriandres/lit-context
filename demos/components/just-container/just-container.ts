@@ -1,10 +1,9 @@
+
 import { LitElement, html } from 'lit-element';
 
 export class JustContainer extends LitElement {
-  constructor(){
-    super();
-    this.updates = 0;
-  }
+  updates: number = 0;
+  
   render() {
     this.updates ++;
     return html`
