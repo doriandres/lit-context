@@ -19,6 +19,17 @@
         "ideas",
         "infra"
       ]
+    },{
+      "login": "doriandres",
+      "name": "Dorian Andrés",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19631146?v=4",
+      "profile": "https://github.com/doriandres",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc",
+        "maintenance"
+      ]
     }
   ],
   "skipCi": true,
