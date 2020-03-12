@@ -1,7 +1,16 @@
 {
-  "include": ["src", "types", "test"],
+  "include": [
+    "src",
+    "types",
+    "test"
+  ],
   "compilerOptions": {
-    "lib": ["ESNext.Array", "ESNext", "ES2017", "DOM"],
+    "lib": [
+      "ESNext.Array",
+      "ESNext",
+      "ES2017",
+      "DOM"
+    ],
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
