@@ -4,29 +4,31 @@
   "author": "doriandres",
   "license": "MIT",
   "scripts": {
-    "start": "parcel index.html --open",
+    "start": "parcel index.html --open --out-dir build",
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "build": "rimraf dist/ && tsdx build --name lit-context --format esm,cjs,umd"
   },
   "husky": {
-      "hooks": {
-          "pre-commit": "tsdx lint"
-      }
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
   },
   "prettier": {
-      "printWidth": 80,
-      "semi": true,
-      "singleQuote": true,
-      "trailingComma": "es5"
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "dependencies": {
     "lit-html": "^1.0.0",
     "lit-element": "^2.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.7",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "tsdx": "^0.12.3",
     "typescript": "^3.8.3"
@@ -34,10 +36,12 @@
   "browserslist": [
     "last 1 chrome version"
   ],
+  "sideEffects": false,
   "module": "dist/lit-context.esm.js",
   "main": "dist/index.js",
   "umd:main": "dist/lit-context.umd.production.min.js",
   "unpkg": "dist/lit-context.umd.production.min.js",
   "jsdelivr": "dist/lit-context.umd.production.min.js",
-  "source": "src/lit-context.ts"
+  "source": "src/lit-context.ts",
+  "types": "./dist/lit-context.d.ts"
 }
