@@ -1,5 +1,5 @@
 
-# LitContext &middot; ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![npm version](https://img.shields.io/npm/v/react.svg?style=flat) ![Build Status](https://travis-ci.org/doriandres/lit-context.svg?branch=master) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+# LitContext &middot; ![License](https://img.shields.io/badge/license-MIT-blue.svg) ![npm version](https://img.shields.io/npm/v/lit-context.svg?style=flat) ![Build Status](https://travis-ci.org/doriandres/lit-context.svg?branch=master) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 LitContext is a JavaScript library for dealing with data context with LitElement components.
 
