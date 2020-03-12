@@ -128,7 +128,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/doriandres"><img src="https://avatars0.githubusercontent.com/u/19631146?v=4" width="100px;" alt=""/><br /><sub><b>Dorian Andrés</b></sub></a><br /><a href="https://github.com/doriandres/lit-context/commits?author=doriandres" title="Code">💻</a> <a href="#ideas-doriandres" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/doriandres/lit-context/commits?author=doriandres" title="Documentation">📖</a> <a href="#maintenance-doriandres" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/garyvh2"><img src="https://avatars1.githubusercontent.com/u/21265830?v=4" width="100px;" alt=""/><br /><sub><b>Gary Valverde Hampton</b></sub></a><br /><a href="https://github.com/doriandres/lit-context/commits?author=garyvh2" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/garyvh2"><img src="https://avatars1.githubusercontent.com/u/21265830?v=4" width="100px;" alt=""/><br /><sub><b>Gary Valverde Hampton</b></sub></a><br /><a href="https://github.com/doriandres/lit-context/commits?author=garyvh2" title="Code">💻</a> <a href="#ideas-garyvh2" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
