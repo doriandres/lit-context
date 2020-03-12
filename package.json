@@ -1,6 +1,6 @@
 {
   "name": "lit-context",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "doriandres",
   "license": "MIT",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "build": "rimraf dist/ && tsdx build --name lit-context --format esm,cjs,umd"
+    "build": "rimraf dist/ && tsdx build --name lit-context --format esm,cjs,umd",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -31,7 +32,8 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "tsdx": "^0.12.3",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "semantic-release": "^17.0.4"
   },
   "browserslist": [
     "last 1 chrome version"
@@ -43,5 +45,9 @@
   "unpkg": "dist/lit-context.umd.production.min.js",
   "jsdelivr": "dist/lit-context.umd.production.min.js",
   "source": "src/lit-context.ts",
-  "types": "./dist/lit-context.d.ts"
+  "types": "./dist/lit-context.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doriandres/lit-context.git"
+  }
 }
