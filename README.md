@@ -39,16 +39,26 @@ class SimpleMessage extends LitElement {
 }
 
 // Provide the context
+
+// Provide the context
 @customElement("main-app")
 class MainApp extends LitElement {
+  @property({ type : Number })
+  counter = 0;
+
   get providerValue(){
     return { 
       message: `The values is ${this.counter}` 
     };
   }
+  
+  increase = () => {
+    this.value += 1;
+  }
+  
   render() {    
     return html`      
-      <button @click=${increase}>Add</button>
+      <button @click=${this.increase}>Add</button>
       <br/>      
       <!-- All providers have only a value property -->
       <message-provider .value=${this.providerValue}>
