@@ -7,8 +7,8 @@
     "start": "parcel index.html --open --out-dir build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "build": "rimraf dist/ && tsdx build --name lit-context --format esm,cjs,umd",
+    "prepare": "tsdx build --name lit-context --format esm,cjs,umd",
+    "build": "tsdx build --name lit-context --format esm,cjs,umd",
     "semantic-release": "semantic-release"
   },
   "husky": {
