@@ -1,4 +1,5 @@
 {
+  "include": ["src", "types", "test"],
   "compilerOptions": {
     "lib": ["ESNext.Array", "ESNext", "ES2017", "DOM"],
     "target": "ESNext",
@@ -6,9 +7,19 @@
     "moduleResolution": "Node",
     "experimentalDecorators": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "rootDir": "./",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   },
-  "include": [
-    "src/**/*.ts"
-  ],
 }
