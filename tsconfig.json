@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext.Array", "ESNext", "ES2017", "DOM"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "allowJs": true,
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+}

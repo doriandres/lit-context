@@ -18,3 +18,5 @@
 # build
 /_site/
 /dist/
+
+/.cache
