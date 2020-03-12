@@ -1,0 +1,24 @@
+{
+  "projectName": "lit-context",
+  "projectOwner": "doriandres",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "doriandres",
+      "name": "Dorian Andrés",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/19631146?v=4",
+      "profile": "https://github.com/doriandres",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
