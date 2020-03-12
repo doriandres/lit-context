@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html --open --out-dir build",
-    "test": "tsdx test",
+    "test": "echo \"No test specified\"",
     "lint": "tsdx lint",
     "prepare": "tsdx build --name lit-context --format esm,cjs,umd",
     "build": "tsdx build --name lit-context --format esm,cjs,umd",
