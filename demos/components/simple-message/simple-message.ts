@@ -1,17 +1,13 @@
 import { LitElement, html, property, customElement } from 'lit-element';
-import { consumeMessageContext } from '../../providers/message-consumer';
+import { consume } from '../../../src/lit-context';
 
 @customElement('simple-message')
+@consume('message-provider')
 export class SimpleMessage extends LitElement {
   @property({ type: String })
   message: string = "";
-
+  
   updates: number = 0;
-
-  connectedCallback(){
-    super.connectedCallback();
-    consumeMessageContext(this);
-  }
 
   render() {
     this.updates++;

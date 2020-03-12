@@ -7,3 +7,4 @@
  */
 export { ContextProvider } from "./lib/context-provider";
 export { contextConsumer } from "./lib/context-consumer";
+export { consume } from './decorators/consume';

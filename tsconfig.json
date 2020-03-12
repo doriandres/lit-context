@@ -6,7 +6,7 @@
     "moduleResolution": "Node",
     "experimentalDecorators": true,
     "sourceMap": true,
-    "allowJs": true,
+    "allowJs": true
   },
   "include": [
     "src/**/*.ts"
