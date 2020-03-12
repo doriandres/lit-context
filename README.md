@@ -11,75 +11,107 @@ Coming soon
 npm install lit-context
 ```
 
-## Usage
+## Getting started
+
+### Providing properties
 
 ```javascript
+import { LitElement, html, customElement, property } from 'lit-element';
+import { createContext } from "lit-context";
 
-import { ContextProvider, contextConsumer } from "lit-context";
-import { LitElement, html } from 'lit-element';
+// Create a context
+// Context creation will define a custom element provider with the given name <message-provider>
+const { consume: consumeMessage } = createContext('message');
 
-// Create custom provider
-class MessageProvider extends ContextProvider{}
-customElements.define('message-provider', MessageProvider);
 
-// Create custom consumer
-const consumeMessageContext = consumer => contextConsumer('message-provider', consumer);
-
-// Consumer component example
+// Create a consumer custom element
+@customElement("simple-message")
+@consumeMessage()
 class SimpleMessage extends LitElement {
-  static get properties() {
-    return {
-      message: { type: String }
-    }
-  }
-  constructor() {
-    super();
-    this.message = "";        
-  }
-  connectedCallback(){
-    super.connectedCallback();
-    consumeMessageContext(this); // Start consuming the message until the component is connected
-  }
+  @property({ type: String })
+  message = "";
+  
   render() {
     return html`      
       <p>${this.message}</p>
     `;
   }
 }
-customElements.define('simple-message', SimpleMessage);
 
-
-// Usage example
+// Provide the context
+@customElement("main-app")
 class MainApp extends LitElement {
-  static get properties() {
-    return {
-      counter: { type: Number }
-    }
-  }
-  
-  constructor() {
-    super();
-    this.counter = 0;        
-  }
-  
   get providerValue(){
-   return { message: `Value: ${this.counter}` };
+    return { 
+      message: `The values is ${this.counter}` 
+    };
   }
-  
-  increase = () => this.counter++;
-  
   render() {    
     return html`      
       <button @click=${increase}>Add</button>
-      <br/>
+      <br/>      
+      <!-- All providers have only a value property -->
       <message-provider .value=${this.providerValue}>
+          <!-- All consumers under the provider (light or shadow dom) will get updates (even if they are slotted or inside another custom element) -->
           <simple-message></simple-message>
       </message-provider>
     `;
   }
+}  
+
+```
+
+
+### Dependency Injection like behavior
+
+```javascript
+import { LitElement, html, customElement, property } from 'lit-element';
+import { createContext } from "lit-context";
+
+const { consume: consumeHttp } = createContext('http', {
+  httpGet: async url => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+});
+
+@customElement("some-list")
+@consumeHttp()
+class SomeList extends LitElement {
+  @property({ type: Array })
+  items = [];
+  
+  async loadItems(){
+    this.items = this.httpGet('https://someapi.com/api/v1/items');
+  }
+  
+  firstUpdated(){
+    this.loadItems();
+  }
+  
+  render() {
+    return html`      
+      <ul>
+        ${this.items.map(item => html`
+          <li>${item}</li>
+        `)}
+      </ul>
+    `;
+  }
 }
 
-customElements.define('main-app', MainApp);
+
+@customElement("main-app")
+class MainApp extends LitElement {
+  render() {    
+    return html`      
+      <http-provider>
+        <some-list></some-list>
+      </http-provider>
+    `;
+  }
+}
 
 ```
 
