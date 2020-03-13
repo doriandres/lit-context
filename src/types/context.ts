@@ -7,15 +7,17 @@
  */
 
 interface IContext {
-    getValue(): Object
-    setValue(newValue: Object): void
+    getValue(): object
+    setValue(newValue: object): void
 }
 
+export type MapFn = (providerNewValue?: object, providerOldValue?: object) => void;
+
 export class Context implements IContext {
-    value: Object;
+    value: object;
     subscriptions: Set<Function>;
 
-    constructor(initialValue: Object) {
+    constructor(initialValue: object) {
         this.value = initialValue;
         this.subscriptions = new Set<Function>()
     }
@@ -24,7 +26,7 @@ export class Context implements IContext {
         return this.value;
     }
 
-    setValue(newValue: Object) {
+    setValue(newValue: object) {
         const oldValue = this.value;
         this.value = newValue;
         this.subscriptions?.forEach(subscription => subscription(newValue, oldValue));

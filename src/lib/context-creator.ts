@@ -9,6 +9,7 @@
 import { ContextProvider } from "./context-provider";
 import { contextConsumer } from "./context-consumer";
 import { consume } from '../decorators/consume';
+import { MapFn } from "../types/context";
 
 /**
  * @param providerTagName Provider name (Note: It will be used to generate its custom element tag name)
@@ -25,7 +26,7 @@ export const createContext = (providerName: string, defaultValue: object = {}) =
 
   return {
     getTagName: (): string => tagName,
-    consumer: (consumer: HTMLElement, mapFn?: (instance: HTMLElement, providerNewValue: object, providerOldValue: object) => void) => contextConsumer(tagName, consumer, mapFn),
-    consume: (mapFn?: (instance: HTMLElement, providerNewValue: object, providerOldValue: object) => void) => consume(tagName, mapFn)
+    consumer: (consumer: HTMLElement, mapFn?: MapFn) => contextConsumer(tagName, consumer, mapFn),
+    consume: (mapFn?: MapFn) => consume(tagName, mapFn)
   }
 }

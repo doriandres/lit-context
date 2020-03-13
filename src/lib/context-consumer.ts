@@ -8,6 +8,7 @@
 
 import { consumeContext } from "./context";
 import { ContextProvider } from "./context-provider";
+import { MapFn } from "../types/context";
 
 /**
  * Context Consumer
@@ -15,7 +16,7 @@ import { ContextProvider } from "./context-provider";
  * @param consumer 
  * @param mapFn 
  */
-export const contextConsumer = (providerTag: string, consumer: Element, mapFn?: Function) => {
+export const contextConsumer = (providerTag: string, consumer: Element, mapFn?: MapFn) => {
   let provider: ContextProvider | null = null;
   let node = consumer;
 
@@ -41,13 +42,13 @@ export const contextConsumer = (providerTag: string, consumer: Element, mapFn?: 
     /**
      * Register the context to be consumed
      */
-    const unsubscribe = consumeContext(provider.context, (newValue: object, oldValue: object) => {
+    const unsubscribe = consumeContext(provider.context, (providerNewValue: object, providerOldValue: object) => {
       if (!consumer.isConnected) {
         unsubscribe();
       } else if (mapFn instanceof Function) {
-        mapFn.call(consumer, [newValue, oldValue]);
+        mapFn.call(consumer, providerNewValue, providerOldValue);
       } else {
-        Object.assign(consumer, newValue);
+        Object.assign(consumer, providerNewValue);
       }
     });
   }

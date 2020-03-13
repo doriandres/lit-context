@@ -2,7 +2,7 @@ import { LitElement, html, customElement, property } from 'lit-element';
 import { consume } from '../../../src/lit-context';
 
 @customElement('advanced-message')
-@consume('message-provider', function([{ message, increase }]) {
+@consume('message-provider', function({ message, increase }: Message) {
   this.mappedMessage = message;
   this.increase = increase;
 })
