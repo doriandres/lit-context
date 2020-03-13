@@ -13,8 +13,8 @@ import { MapFn } from "../types/context";
  * @param providerTag Provider tag name
  * @param mapFn  Function to map provider value
  */
-export const consume = (providerTag: string, mapFn?: MapFn) => {
-    const consumer = (consumer: HTMLElement, mapFn?: MapFn) => contextConsumer(providerTag, consumer, mapFn);
+export const consume = <T = object>(providerTag: string, mapFn?: MapFn<T>) => {
+    const consumer = (consumer: HTMLElement, mapFn?: MapFn<T>) => contextConsumer(providerTag, consumer, mapFn);
 
     return function <T extends { new(...args: any[]): HTMLElement }>(constructor: T) {
         return class extends constructor {

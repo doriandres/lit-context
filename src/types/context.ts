@@ -11,7 +11,7 @@ interface IContext {
     setValue(newValue: object): void
 }
 
-export type MapFn = (providerNewValue?: object, providerOldValue?: object) => void;
+export type MapFn<T = object> = (providerNewValue?: T, providerOldValue?: T) => void;
 
 export class Context implements IContext {
     value: object;

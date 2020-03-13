@@ -1,3 +1,3 @@
-import { contextConsumer } from "../../src/lit-context";
+import { contextConsumer, MapFn } from "../../src/lit-context";
 
-export const consumeMessageContext = (consumer: Element, mapFn?: Function) => contextConsumer('message-provider', consumer, mapFn);
+export const consumeMessageContext = (consumer: Element, mapFn?: MapFn) => contextConsumer('message-provider', consumer, mapFn);
