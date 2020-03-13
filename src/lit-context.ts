@@ -9,3 +9,4 @@ export { ContextProvider } from "./lib/context-provider";
 export { contextConsumer } from "./lib/context-consumer";
 export { createContext } from "./lib/context-creator";
 export { consume } from './decorators/consume';
+export * from './types/context';
