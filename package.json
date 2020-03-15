@@ -7,7 +7,7 @@
     "start": "parcel index.html --open --out-dir build",
     "test": "echo \"No test specified\"",
     "lint": "tsdx lint",
-    "prepare": "tsdx build --name lit-context --format esm,cjs,umd",
+    "prepare": "cross-env NODE_ENV=production tsdx build --name lit-context --format esm,cjs,umd",
     "build": "tsdx build --name lit-context --format esm,cjs,umd",
     "semantic-release": "semantic-release"
   },
@@ -28,6 +28,7 @@
     "tslib": "^1.11.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "@babel/core": "^7.8.7",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",

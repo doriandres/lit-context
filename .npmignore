@@ -1,1 +1,4 @@
+.cache/
 demos/
+build/
+node_modules
