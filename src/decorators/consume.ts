@@ -8,20 +8,19 @@
 
 import { contextConsumer } from "../lib/context-consumer";
 import { MapFn } from "../types/context";
+import { LitElement } from "lit-element";
 
 /**
  * @param providerTag Provider tag name
  * @param mapFn  Function to map provider value
  */
 export const consume = <T = object>(providerTag: string, mapFn?: MapFn<T>) => {
-    const consumer = (consumer: HTMLElement, mapFn?: MapFn<T>) => contextConsumer(providerTag, consumer, mapFn);
+    const consumer = (consumer: LitElement, mapFn?: MapFn<T>) => contextConsumer(providerTag, consumer, mapFn);
 
-    return function <T extends { new(...args: any[]): HTMLElement }>(constructor: T) {
-        return class extends constructor {
+    return function <T extends { new(...args: any[]): LitElement }>(classConstructor: T) {
+        return class extends classConstructor {
             connectedCallback() {
-                if (super.connectedCallback) {
-                    super.connectedCallback();
-                }
+                super.connectedCallback();
                 consumer(this, mapFn);
             }
         }
