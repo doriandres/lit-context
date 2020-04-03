@@ -19,7 +19,9 @@ export const consume = <T = object>(providerTag: string, mapFn?: MapFn<T>) => {
     return function <T extends { new(...args: any[]): HTMLElement }>(constructor: T) {
         return class extends constructor {
             connectedCallback() {
-                super.connectedCallback();
+                if (super.connectedCallback) {
+                    super.connectedCallback();
+                }
                 consumer(this, mapFn);
             }
         }
