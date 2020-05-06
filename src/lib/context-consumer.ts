@@ -19,16 +19,31 @@ import { MapFn } from "../types/context";
 export const contextConsumer = <T = object>(providerTag: string, consumer: Element, mapFn?: MapFn<T>) => {
   let provider: ContextProvider | null = null;
   let node = consumer;
+  let slot = node.assignedSlot instanceof HTMLSlotElement;
 
   do {
     /**
      * Find the node's closest provider tag
      */
     provider = node?.closest(providerTag);
+
+    /**
+     * If within a slot 
+     */
+    if (slot && provider === null) {
+      provider = node?.assignedSlot?.closest(providerTag) || null;
+    } 
     /**
      * Find the root node
      */
-    const root: Element | ShadowRoot | null = node?.getRootNode() as ShadowRoot;
+    let root: Element | ShadowRoot | null = node?.getRootNode() as ShadowRoot;
+
+    /**
+     * If within a slot
+     */
+    if (slot && root === null) {
+      root = node?.assignedSlot?.getRootNode() as ShadowRoot || null;
+    } 
     /**
      * Set the node to the root host
      */
