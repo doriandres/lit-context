@@ -27,6 +27,6 @@ export const createContext = (providerName: string, defaultValue: object = {}) =
   return {
     getTagName: (): string => tagName,
     consumer: (consumer: HTMLElement, mapFn?: MapFn) => contextConsumer(tagName, consumer, mapFn),
-    consume: (mapFn?: MapFn) => consume(tagName, mapFn)
+    consume: (mapFn?: MapFn) => consume(tagName, mapFn) as any
   }
 }

@@ -19,9 +19,9 @@ import { MapFn } from "../types/context";
 export const contextConsumer = <T = object>(providerTag: string, consumer: Element, mapFn?: MapFn<T>) => {
   let provider: ContextProvider | null = null;
   let node = consumer;
-  let slot = node.assignedSlot instanceof HTMLSlotElement;
 
   do {
+    let slot: Boolean = node.assignedSlot instanceof HTMLSlotElement;
     /**
      * Find the node's closest provider tag
      */

@@ -50,7 +50,7 @@ const legacyCustomElement =
                 super.connectedCallback();
                 consumer(this, mapFn);
             }
-        }
+        } as any
     };
 
 const standardCustomElement =
@@ -61,9 +61,9 @@ const standardCustomElement =
             kind,
             elements,
             finisher(clazz: Constructor<HTMLElement>) {
-                clazz.prototype.__connectedCallback = clazz.prototype.connectedCallback;
+                clazz.prototype.__litContextConnectedCallback = clazz.prototype.connectedCallback;
                 clazz.prototype.connectedCallback = function connectedCallbackHandler() {
-                  this.__connectedCallback();
+                  this.__litContextConnectedCallback();
                   consumer(this, mapFn);
                 };
             }
