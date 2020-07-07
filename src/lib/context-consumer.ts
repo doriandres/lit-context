@@ -18,7 +18,7 @@ import { MapFn } from "../types/context";
  */
 export const contextConsumer = <T = object>(providerTag: string, consumer: Element, mapFn?: MapFn<T>) => {
   let provider: ContextProvider | null = null;
-  let node = consumer;
+  let node: Element | null = consumer;
 
   do {
     let slot: Boolean = node.assignedSlot instanceof HTMLSlotElement;
@@ -30,9 +30,20 @@ export const contextConsumer = <T = object>(providerTag: string, consumer: Eleme
     /**
      * If within a slot 
      */
+    let parentIsSlotted;
     if (slot && provider === null) {
       provider = node?.assignedSlot?.closest(providerTag) || null;
-    } 
+      /**
+       * If provider remains null
+       */
+      if (provider === null) {
+        /**
+         * Then check if the parent node of the slotted element is slotted as well
+         */
+        parentIsSlotted = node?.parentElement?.assignedSlot instanceof HTMLSlotElement;
+      }
+    }
+
     /**
      * Find the root node
      */
@@ -47,7 +58,7 @@ export const contextConsumer = <T = object>(providerTag: string, consumer: Eleme
     /**
      * Set the node to the root host
      */
-    node = root?.host;
+    node = parentIsSlotted ? node?.parentElement : root?.host;
   } while (!provider && node);
 
   /**
