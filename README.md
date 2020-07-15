@@ -70,7 +70,7 @@ class MainApp extends LitElement {
 }  
 
 ```
-
+----------
 
 ### Dependency Injection like behavior
 
@@ -93,7 +93,7 @@ class SomeList extends LitElement {
   items = [];
   
   async loadItems(){
-    this.items = this.httpGet('https://someapi.com/api/v1/items');
+    this.items = await this.httpGet('https://someapi.com/api/v1/items');
   }
   
   firstUpdated(){
