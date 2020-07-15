@@ -5,8 +5,6 @@ LitContext is a JavaScript library for dealing with data context with LitElement
 
 ## Installation
 
-Coming soon
-
 ```bash
 npm install lit-context
 ```
