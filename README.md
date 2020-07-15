@@ -53,7 +53,7 @@ class MainApp extends LitElement {
   }
   
   increase = () => {
-    this.value += 1;
+    this.counter += 1;
   }
   
   render() {    
