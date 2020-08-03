@@ -32,6 +32,15 @@
         "ideas",
         "infra"
       ]
+    },
+    {
+      "login": "davemooreuws",
+      "name": "David Moore",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4121492?v=4",
+      "profile": "https://github.com/davemooreuws",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
